@@ -1,10 +1,6 @@
-_Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
-
----
-
 # Estimator App
 
-App for estimate products with your pricing. It's made with Svelte using the store data.
+App for estimate products with your pricing. It's made with Svelte using store.
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
