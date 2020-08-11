@@ -1,7 +1,9 @@
 <script>
+  import materialStore from "./material-store";
+
   export let id;
   export let name = "";
-  export let price;
+  export let price = 5;
 
   $: mode = id ? "edit" : "add";
   $: canSubmit = price >= 0 && name !== "";
@@ -9,13 +11,17 @@
   function submit() {
     if (!canSubmit) return;
 
-    price = "";
+    if (mode === "add") {
+      materialStore.add(name, price);
+    }
+
+    price = 5;
     name = "";
     id = undefined;
   }
 
   function cancel() {
-    price = "";
+    price = 5;
     name = "";
     id = undefined;
   }
