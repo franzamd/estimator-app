@@ -4,6 +4,7 @@
   export let id;
   export let name = "";
   export let price = 5;
+  let inputPrice;
 
   $: mode = id ? "edit" : "add";
   $: canSubmit = price >= 0 && name !== "";
@@ -22,6 +23,7 @@
     price = 5;
     name = "";
     id = undefined;
+    inputPrice.value = price;
   }
 
   function cancel() {
@@ -54,6 +56,7 @@
   <fieldset>
     <label for="priceField">Material</label>
     <input
+      bind:this={inputPrice}
       bind:value={price}
       type="number"
       name="priceField"
