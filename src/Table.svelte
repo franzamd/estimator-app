@@ -22,6 +22,10 @@
     style: "currency",
     currency: "USD",
   });
+
+  function remove(id) {
+    materialStore.remove(id);
+  }
 </script>
 
 <style>
@@ -31,6 +35,10 @@
 
   tr {
     cursor: pointer;
+  }
+
+  tr:last-of-type {
+    cursor: inherit;
   }
 </style>
 
@@ -48,7 +56,9 @@
         <td>{material.name}</td>
         <td>{formatter.format(material.price)}</td>
         <td>
-          <i class="far fa-trash-alt" />
+          <i
+            on:click|stopPropagation={remove(material.id)}
+            class="far fa-trash-alt" />
         </td>
       </tr>
     {/each}

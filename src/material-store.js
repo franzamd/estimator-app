@@ -35,8 +35,15 @@ materialStore.subscribe((items) => {
   localStorage.setItem(key, jsonString);
 });
 
+const remove = (id) => {
+  materialStore.update((items) => {
+    return items.filter((i) => i.id !== id);
+  });
+};
+
 export default {
   subscribe: materialStore.subscribe,
   add,
   edit,
+  remove
 };
